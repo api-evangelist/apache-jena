@@ -7,11 +7,11 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - Semantic Web
-  - RDF
-  - SPARQL
   - Linked Data
   - Ontology
+  - RDF
+  - Semantic Web
+  - SPARQL
 created: '2026-03-16'
 modified: '2026-03-16'
 url: >-
@@ -24,10 +24,10 @@ apis:
       Jena Fuseki provides a SPARQL server with REST API endpoints for SPARQL Query, Update, and Graph Store Protocol operations, plus a Java API for RDF model manipulation, SPARQL query execution, OWL reasoning, and TDB triplestore access.
     humanURL: https://jena.apache.org/documentation/fuseki2/
     tags:
+      - Java
+      - RDF
       - REST
       - SPARQL
-      - RDF
-      - Java
     properties:
       - type: Documentation
         url: https://jena.apache.org/documentation/fuseki2/
