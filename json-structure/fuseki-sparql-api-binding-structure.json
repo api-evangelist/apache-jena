@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-structure/fuseki-sparql-api-binding-structure.json",
+  "name": "Binding",
+  "description": "A single result binding",
+  "properties": {
+    "s": {
+      "$ref": "#/components/schemas/RDFTerm"
+    },
+    "p": {
+      "$ref": "#/components/schemas/RDFTerm"
+    },
+    "o": {
+      "$ref": "#/components/schemas/RDFTerm"
+    }
+  }
+}

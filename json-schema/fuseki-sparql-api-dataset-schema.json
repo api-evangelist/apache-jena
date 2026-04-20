@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-schema/fuseki-sparql-api-dataset-schema.json",
+  "title": "Dataset",
+  "description": "A Fuseki dataset",
+  "type": "object",
+  "properties": {
+    "ds.name": {
+      "type": "string",
+      "description": "Dataset name",
+      "example": "/ds"
+    },
+    "ds.state": {
+      "type": "boolean",
+      "description": "Whether the dataset is active",
+      "example": true
+    },
+    "ds.services": {
+      "type": "array",
+      "description": "Available services for this dataset",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

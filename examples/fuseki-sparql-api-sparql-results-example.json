@@ -1,0 +1,15 @@
+{
+  "head": {
+    "vars": [
+      "s",
+      "p",
+      "o"
+    ]
+  },
+  "results": {
+    "bindings": [
+      "example-value"
+    ]
+  },
+  "boolean": false
+}

@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-structure/fuseki-sparql-api-sparql-results-structure.json",
+  "name": "SparqlResults",
+  "description": "SPARQL query results in JSON format",
+  "properties": {
+    "head": {
+      "type": "object",
+      "description": "Result metadata including variable names",
+      "properties": {
+        "vars": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "s",
+            "p",
+            "o"
+          ]
+        }
+      }
+    },
+    "results": {
+      "type": "object",
+      "description": "Query result bindings",
+      "properties": {
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Binding"
+          }
+        }
+      }
+    },
+    "boolean": {
+      "type": "boolean",
+      "description": "Result for ASK queries"
+    }
+  }
+}

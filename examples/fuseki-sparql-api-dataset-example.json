@@ -1,0 +1,7 @@
+{
+  "ds.name": "/ds",
+  "ds.state": true,
+  "ds.services": [
+    {}
+  ]
+}

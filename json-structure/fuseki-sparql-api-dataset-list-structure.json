@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-structure/fuseki-sparql-api-dataset-list-structure.json",
+  "name": "DatasetList",
+  "description": "List of Fuseki datasets",
+  "properties": {
+    "datasets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Dataset"
+      }
+    }
+  }
+}

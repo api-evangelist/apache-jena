@@ -1,0 +1,115 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Apache Jena SPARQL Data Management"
+  description: "Workflow capability for data engineers and knowledge graph architects to query, update, and manage RDF datasets using Apache Jena Fuseki."
+  tags:
+    - Apache Jena
+    - Knowledge Graph
+    - Linked Data
+    - RDF
+    - SPARQL
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      FUSEKI_PASSWORD: FUSEKI_PASSWORD
+
+capability:
+  consumes:
+    - import: jena-fuseki
+      location: ./shared/fuseki-sparql-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: jena-sparql-management-api
+      description: "Unified REST API for Apache Jena SPARQL data management."
+      resources:
+        - path: /v1/sparql
+          name: sparql
+          operations:
+            - method: GET
+              name: sparql-query
+              description: Execute SPARQL query
+              call: "jena-fuseki.sparql-query-get"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/datasets
+          name: datasets
+          operations:
+            - method: GET
+              name: list-datasets
+              description: List all datasets
+              call: "jena-fuseki.list-datasets"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: POST
+              name: create-dataset
+              description: Create a dataset
+              call: "jena-fuseki.create-dataset"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: jena-sparql-management-mcp
+      transport: http
+      description: "MCP server for AI-assisted SPARQL knowledge graph management."
+      tools:
+        - name: sparql-query
+          description: Execute a SPARQL SELECT query to retrieve RDF data from a Fuseki dataset
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "jena-fuseki.sparql-query-get"
+          with:
+            dataset: "tools.dataset"
+            query: "tools.query"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: sparql-update
+          description: Execute a SPARQL UPDATE to insert or delete RDF triples
+          hints:
+            readOnly: false
+          call: "jena-fuseki.sparql-update"
+          with:
+            dataset: "tools.dataset"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-datasets
+          description: List all RDF datasets available on the Fuseki server
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "jena-fuseki.list-datasets"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-dataset
+          description: Create a new RDF dataset on the Fuseki server
+          hints:
+            readOnly: false
+          call: "jena-fuseki.create-dataset"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-graph
+          description: Retrieve a named RDF graph from a dataset
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "jena-fuseki.get-graph"
+          with:
+            dataset: "tools.dataset"
+            graph: "tools.graph_uri"
+          outputParameters:
+            - type: object
+              mapping: "$."

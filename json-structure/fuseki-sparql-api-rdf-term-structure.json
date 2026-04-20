@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-structure/fuseki-sparql-api-rdf-term-structure.json",
+  "name": "RDFTerm",
+  "description": "An RDF term (URI, literal, or blank node)",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "uri",
+        "literal",
+        "bnode"
+      ],
+      "example": "uri"
+    },
+    "value": {
+      "type": "string",
+      "example": "http://example.org/subject"
+    },
+    "datatype": {
+      "type": "string",
+      "description": "Datatype URI for typed literals"
+    },
+    "xml:lang": {
+      "type": "string",
+      "description": "Language tag for language-tagged literals"
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "jena": "https://apache-jena.apache.org/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "SparqlResults": "jena:SparqlResults",
+    "DatasetList": "jena:DatasetList",
+    "DatasetRequest": "jena:DatasetRequest",
+    "RDFTerm": "jena:RDFTerm",
+    "Dataset": "jena:Dataset",
+    "Binding": "jena:Binding",
+    "head": {
+      "@id": "jena:head",
+      "@type": "@id"
+    },
+    "vars": {
+      "@id": "jena:vars",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "results": {
+      "@id": "jena:results",
+      "@type": "@id"
+    },
+    "bindings": {
+      "@id": "jena:bindings",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "boolean": {
+      "@id": "jena:boolean",
+      "@type": "xsd:boolean"
+    },
+    "datasets": {
+      "@id": "jena:datasets",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "dbName": {
+      "@id": "jena:dbName",
+      "@type": "xsd:string"
+    },
+    "dbType": {
+      "@id": "jena:dbType",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "jena:type",
+      "@type": "xsd:string"
+    },
+    "value": {
+      "@id": "jena:value",
+      "@type": "xsd:string"
+    },
+    "datatype": {
+      "@id": "jena:datatype",
+      "@type": "xsd:string"
+    },
+    "xml:lang": {
+      "@id": "jena:xml:lang",
+      "@type": "xsd:string"
+    },
+    "ds.name": {
+      "@id": "jena:ds.name",
+      "@type": "xsd:string"
+    },
+    "ds.state": {
+      "@id": "jena:ds.state",
+      "@type": "xsd:boolean"
+    },
+    "ds.services": {
+      "@id": "jena:ds.services",
+      "@container": "@set",
+      "@type": "@id"
+    },
+    "s": {
+      "@id": "jena:s",
+      "@type": "xsd:string"
+    },
+    "p": {
+      "@id": "jena:p",
+      "@type": "xsd:string"
+    },
+    "o": {
+      "@id": "jena:o",
+      "@type": "xsd:string"
+    }
+  }
+}

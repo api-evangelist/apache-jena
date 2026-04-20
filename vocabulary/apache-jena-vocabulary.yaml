@@ -1,0 +1,112 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Apache Jena"
+  description: "Vocabulary for Apache Jena Fuseki SPARQL API and semantic data management workflows."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: jena-fuseki
+      name: Apache Jena Fuseki SPARQL API
+      version: "5.0.0"
+      baseUrl: http://localhost:3030
+      status: active
+
+  resources:
+    - name: datasets
+      description: RDF datasets containing named and default graphs
+      apis: [jena-fuseki]
+      actions: [list, create, get, delete]
+    - name: graphs
+      description: Named RDF graphs within datasets
+      apis: [jena-fuseki]
+      actions: [get, replace, add, delete]
+    - name: sparql-queries
+      description: SPARQL SELECT, CONSTRUCT, ASK, and DESCRIBE queries
+      apis: [jena-fuseki]
+      actions: [execute]
+    - name: sparql-updates
+      description: SPARQL INSERT, DELETE, and MODIFY update operations
+      apis: [jena-fuseki]
+      actions: [execute]
+
+  actions:
+    - name: execute
+      httpMethod: POST
+      pattern: read
+      description: Execute a SPARQL query or update
+    - name: list
+      httpMethod: GET
+      pattern: read
+    - name: create
+      httpMethod: POST
+      pattern: write
+    - name: get
+      httpMethod: GET
+      pattern: read
+    - name: replace
+      httpMethod: PUT
+      pattern: write
+    - name: add
+      httpMethod: POST
+      pattern: write
+    - name: delete
+      httpMethod: DELETE
+      pattern: destructive
+
+  authentication:
+    schemes:
+      - name: BasicAuth
+        type: http
+        scheme: basic
+
+capability:
+  workflows:
+    - name: SPARQL Data Management
+      file: capabilities/sparql-data-management.yaml
+      toolCount: 5
+      personas:
+        - Data Engineer
+        - Knowledge Graph Architect
+
+  personas:
+    - id: data-engineer
+      name: Data Engineer
+      description: Engineers who manage and query RDF datasets with SPARQL
+      workflows: [SPARQL Data Management]
+    - id: knowledge-graph-architect
+      name: Knowledge Graph Architect
+      description: Architects who design RDF schemas and knowledge graph structures
+      workflows: [SPARQL Data Management]
+
+  domains:
+    - name: Data Management
+      resources: [datasets, graphs]
+    - name: Query Execution
+      resources: [sparql-queries, sparql-updates]
+
+  namespaces:
+    - name: jena-fuseki
+      type: consumed
+    - name: jena-sparql-management-api
+      type: rest-exposed
+      port: 8080
+    - name: jena-sparql-management-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: FUSEKI_PASSWORD
+      workflows: [SPARQL Data Management]
+
+crossReference:
+  - resource: datasets
+    operations: [listDatasets, createDataset, getDataset, deleteDataset]
+    workflows: [SPARQL Data Management]
+    personas: [Data Engineer, Knowledge Graph Architect]
+  - resource: sparql-queries
+    operations: [sparqlQueryGet, sparqlQueryPost]
+    workflows: [SPARQL Data Management]
+    personas: [Data Engineer]

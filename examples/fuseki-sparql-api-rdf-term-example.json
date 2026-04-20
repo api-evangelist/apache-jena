@@ -1,0 +1,6 @@
+{
+  "type": "uri",
+  "value": "http://example.org/subject",
+  "datatype": "standard",
+  "xml:lang": "example-value"
+}

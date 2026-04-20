@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-schema/fuseki-sparql-api-dataset-request-schema.json",
+  "title": "DatasetRequest",
+  "description": "Request to create a dataset",
+  "type": "object",
+  "properties": {
+    "dbName": {
+      "type": "string",
+      "description": "Dataset name",
+      "example": "ds"
+    },
+    "dbType": {
+      "type": "string",
+      "description": "Dataset type",
+      "enum": [
+        "tdb",
+        "tdb2",
+        "mem"
+      ],
+      "example": "tdb2"
+    }
+  },
+  "required": [
+    "dbName",
+    "dbType"
+  ]
+}

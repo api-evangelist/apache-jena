@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-schema/fuseki-sparql-api-dataset-list-schema.json",
+  "title": "DatasetList",
+  "description": "List of Fuseki datasets",
+  "type": "object",
+  "properties": {
+    "datasets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Dataset"
+      }
+    }
+  }
+}

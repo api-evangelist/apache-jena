@@ -1,0 +1,140 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Apache Jena Fuseki SPARQL API"
+  description: "Shared per-API capability for the Jena Fuseki SPARQL server covering SPARQL queries, updates, graph store protocol, and dataset management."
+  tags:
+    - Apache Jena
+    - Linked Data
+    - RDF
+    - SPARQL
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      FUSEKI_PASSWORD: FUSEKI_PASSWORD
+
+capability:
+  consumes:
+    - type: http
+      namespace: jena-fuseki
+      baseUri: http://localhost:3030
+      description: "Apache Jena Fuseki SPARQL server"
+      authentication:
+        type: basic
+        username: admin
+        password: "{{FUSEKI_PASSWORD}}"
+      resources:
+        - name: sparql-query
+          path: /{dataset}/sparql
+          description: SPARQL query endpoint
+          operations:
+            - name: sparql-query-get
+              method: GET
+              description: Execute SPARQL query
+              inputParameters:
+                - name: dataset
+                  in: path
+                  type: string
+                  required: true
+                  description: Dataset name
+                - name: query
+                  in: query
+                  type: string
+                  required: true
+                  description: SPARQL query
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: sparql-query-post
+              method: POST
+              description: Execute SPARQL query via POST
+              inputParameters:
+                - name: dataset
+                  in: path
+                  type: string
+                  required: true
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: datasets
+          path: /$/datasets
+          description: Dataset management
+          operations:
+            - name: list-datasets
+              method: GET
+              description: List all datasets
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: create-dataset
+              method: POST
+              description: Create a dataset
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: jena-fuseki-exposed
+      resources:
+        - path: /v1/sparql
+          operations:
+            - method: GET
+              name: sparql-query
+              call: "jena-fuseki.sparql-query-get"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/datasets
+          operations:
+            - method: GET
+              name: list-datasets
+              call: "jena-fuseki.list-datasets"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: jena-fuseki-mcp
+      transport: http
+      tools:
+        - name: sparql-query
+          description: Execute a SPARQL SELECT or ASK query against a Fuseki dataset
+          hints:
+            readOnly: true
+          call: "jena-fuseki.sparql-query-get"
+          with:
+            dataset: "tools.dataset"
+            query: "tools.query"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-datasets
+          description: List all RDF datasets on the Fuseki server
+          hints:
+            readOnly: true
+          call: "jena-fuseki.list-datasets"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: create-dataset
+          description: Create a new RDF dataset on the Fuseki server
+          hints:
+            readOnly: false
+          call: "jena-fuseki.create-dataset"
+          outputParameters:
+            - type: object
+              mapping: "$."

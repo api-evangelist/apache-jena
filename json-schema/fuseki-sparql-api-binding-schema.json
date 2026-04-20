@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/json-schema/fuseki-sparql-api-binding-schema.json",
+  "title": "Binding",
+  "description": "A single result binding",
+  "type": "object",
+  "properties": {
+    "s": {
+      "$ref": "#/components/schemas/RDFTerm"
+    },
+    "p": {
+      "$ref": "#/components/schemas/RDFTerm"
+    },
+    "o": {
+      "$ref": "#/components/schemas/RDFTerm"
+    }
+  }
+}
