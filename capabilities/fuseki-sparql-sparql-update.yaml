@@ -1,0 +1,83 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Apache Jena Fuseki SPARQL API — SPARQL Update
+  description: 'Apache Jena Fuseki SPARQL API — SPARQL Update. 1 operations. Lead operation: Apache jena Apache Jena Fuseki
+    SPARQL Update. Self-contained Naftiko capability covering one Apache Jena business surface.'
+  tags:
+  - Apache Jena
+  - SPARQL Update
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    APACHE_JENA_API_KEY: APACHE_JENA_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: fuseki-sparql-sparql-update
+    baseUri: http://localhost:3030
+    description: Apache Jena Fuseki SPARQL API — SPARQL Update business capability. Self-contained, no shared references.
+    resources:
+    - name: dataset-update
+      path: /{dataset}/update
+      operations:
+      - name: sparqlupdate
+        method: POST
+        description: Apache jena Apache Jena Fuseki SPARQL Update
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: dataset
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: fuseki-sparql-sparql-update-rest
+    port: 8080
+    description: REST adapter for Apache Jena Fuseki SPARQL API — SPARQL Update. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/{dataset}/update
+      name: dataset-update
+      description: REST surface for dataset-update.
+      operations:
+      - method: POST
+        name: sparqlupdate
+        description: Apache jena Apache Jena Fuseki SPARQL Update
+        call: fuseki-sparql-sparql-update.sparqlupdate
+        with:
+          dataset: rest.dataset
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: fuseki-sparql-sparql-update-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Apache Jena Fuseki SPARQL API — SPARQL Update. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: apache-jena-apache-jena-fuseki
+      description: Apache jena Apache Jena Fuseki SPARQL Update
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: fuseki-sparql-sparql-update.sparqlupdate
+      with:
+        dataset: tools.dataset
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
