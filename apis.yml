@@ -36,13 +36,13 @@ apis:
     url: https://jena.apache.org/documentation/fuseki2/
   - type: OpenAPI
     url: openapi/apache-jena-fuseki-sparql-api.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/fuseki-sparql-dataset-management.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/fuseki-sparql-graph-store-protocol.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/fuseki-sparql-sparql-query.yaml
-  - type: NaftikoCapability
+  - type: X-NaftikoCapability
     url: capabilities/fuseki-sparql-sparql-update.yaml
 - aid: apache-jena:java-api
   name: Apache Jena Java API
