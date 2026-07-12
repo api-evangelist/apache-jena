@@ -60,6 +60,10 @@ apis:
   - type: GettingStarted
     url: https://jena.apache.org/tutorials/
 common:
+- type: VulnerabilityDisclosure
+  url: security/apache-jena-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/apache-jena-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/apache
 - type: GitHubRepository
