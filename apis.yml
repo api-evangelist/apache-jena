@@ -60,6 +60,8 @@ apis:
   - type: GettingStarted
     url: https://jena.apache.org/tutorials/
 common:
+- type: AgenticAccess
+  url: agentic-access/apache-jena-agentic-access.yml
 - type: VulnerabilityDisclosure
   url: security/apache-jena-vulnerability-disclosure.yml
 - type: DomainSecurity
