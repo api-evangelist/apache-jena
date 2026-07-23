@@ -1,0 +1,141 @@
+openapi: 3.0.3
+info:
+  title: Apache Jena Fuseki SPARQL Dataset Management Graph Store Protocol API
+  description: REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.
+  version: 5.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    email: users@jena.apache.org
+servers:
+- url: http://localhost:3030
+  description: Apache Jena Fuseki server
+tags:
+- name: Graph Store Protocol
+  description: SPARQL Graph Store HTTP Protocol operations
+paths:
+  /{dataset}/data:
+    get:
+      operationId: getGraph
+      summary: Apache jena Apache Jena Fuseki Get Graph
+      description: Retrieve an RDF graph from the dataset using the Graph Store Protocol.
+      tags:
+      - Graph Store Protocol
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      - name: graph
+        in: query
+        schema:
+          type: string
+        example: http://example.org/graph
+        description: Named graph URI (omit for default graph)
+      responses:
+        '200':
+          description: RDF graph content
+          content:
+            text/turtle:
+              schema:
+                type: string
+            application/ld+json:
+              schema:
+                type: string
+            application/rdf+xml:
+              schema:
+                type: string
+        '404':
+          description: Graph not found
+    put:
+      operationId: replaceGraph
+      summary: Apache jena Apache Jena Fuseki Replace Graph
+      description: Replace an RDF graph in the dataset.
+      tags:
+      - Graph Store Protocol
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      - name: graph
+        in: query
+        schema:
+          type: string
+        example: http://example.org/graph
+      requestBody:
+        required: true
+        content:
+          text/turtle:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Graph replaced
+        '201':
+          description: Graph created
+    post:
+      operationId: addToGraph
+      summary: Apache jena Apache Jena Fuseki Add to Graph
+      description: Add RDF triples to an existing graph.
+      tags:
+      - Graph Store Protocol
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      - name: graph
+        in: query
+        schema:
+          type: string
+        example: example-value
+      requestBody:
+        required: true
+        content:
+          text/turtle:
+            schema:
+              type: string
+      responses:
+        '200':
+          description: Triples added
+    delete:
+      operationId: deleteGraph
+      summary: Apache jena Apache Jena Fuseki Delete Graph
+      description: Delete a named graph from the dataset.
+      tags:
+      - Graph Store Protocol
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      - name: graph
+        in: query
+        schema:
+          type: string
+        example: http://example.org/graph
+      responses:
+        '200':
+          description: Graph deleted

@@ -1,0 +1,162 @@
+openapi: 3.0.3
+info:
+  title: Apache Jena Fuseki SPARQL Dataset Management API
+  description: REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.
+  version: 5.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    email: users@jena.apache.org
+servers:
+- url: http://localhost:3030
+  description: Apache Jena Fuseki server
+tags:
+- name: Dataset Management
+  description: Dataset administration
+paths:
+  /$/datasets:
+    get:
+      operationId: listDatasets
+      summary: Apache jena Apache Jena Fuseki List Datasets
+      description: List all datasets on the Fuseki server.
+      tags:
+      - Dataset Management
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      responses:
+        '200':
+          description: List of datasets
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasetList'
+              examples:
+                listDatasets200Example:
+                  summary: Default listDatasets 200 response
+                  x-microcks-default: true
+                  value:
+                    datasets: []
+    post:
+      operationId: createDataset
+      summary: Apache jena Apache Jena Fuseki Create Dataset
+      description: Create a new RDF dataset on the Fuseki server.
+      tags:
+      - Dataset Management
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatasetRequest'
+            examples:
+              createDatasetRequestExample:
+                summary: Default createDataset request
+                x-microcks-default: true
+                value:
+                  dbName: ds
+                  dbType: tdb2
+      responses:
+        '200':
+          description: Dataset created
+  /$/datasets/{dataset}:
+    get:
+      operationId: getDataset
+      summary: Apache jena Apache Jena Fuseki Get Dataset
+      description: Get information about a specific dataset.
+      tags:
+      - Dataset Management
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      responses:
+        '200':
+          description: Dataset information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dataset'
+              examples:
+                getDataset200Example:
+                  summary: Default getDataset 200 response
+                  x-microcks-default: true
+                  value:
+                    ds.name: /ds
+                    ds.state: true
+                    ds.services: []
+    delete:
+      operationId: deleteDataset
+      summary: Apache jena Apache Jena Fuseki Delete Dataset
+      description: Delete a dataset from the Fuseki server.
+      tags:
+      - Dataset Management
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      responses:
+        '200':
+          description: Dataset deleted
+components:
+  schemas:
+    Dataset:
+      type: object
+      description: A Fuseki dataset
+      properties:
+        ds.name:
+          type: string
+          description: Dataset name
+          example: /ds
+        ds.state:
+          type: boolean
+          description: Whether the dataset is active
+          example: true
+        ds.services:
+          type: array
+          description: Available services for this dataset
+          items:
+            type: object
+    DatasetList:
+      type: object
+      description: List of Fuseki datasets
+      properties:
+        datasets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dataset'
+    DatasetRequest:
+      type: object
+      description: Request to create a dataset
+      required:
+      - dbName
+      - dbType
+      properties:
+        dbName:
+          type: string
+          description: Dataset name
+          example: ds
+        dbType:
+          type: string
+          description: Dataset type
+          enum:
+          - tdb
+          - tdb2
+          - mem
+          example: tdb2

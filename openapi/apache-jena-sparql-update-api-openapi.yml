@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: Apache Jena Fuseki SPARQL Dataset Management SPARQL Update API
+  description: REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.
+  version: 5.0.0
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    email: users@jena.apache.org
+servers:
+- url: http://localhost:3030
+  description: Apache Jena Fuseki server
+tags:
+- name: SPARQL Update
+  description: SPARQL 1.1 Update operations
+paths:
+  /{dataset}/update:
+    post:
+      operationId: sparqlUpdate
+      summary: Apache jena Apache Jena Fuseki SPARQL Update
+      description: Execute a SPARQL 1.1 Update operation to modify RDF data.
+      tags:
+      - SPARQL Update
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      parameters:
+      - name: dataset
+        in: path
+        required: true
+        schema:
+          type: string
+        example: ds
+      requestBody:
+        required: true
+        content:
+          application/sparql-update:
+            schema:
+              type: string
+              example: INSERT DATA { <http://example.org/s> <http://example.org/p> <http://example.org/o> }
+      responses:
+        '200':
+          description: Update executed successfully
+        '400':
+          description: Invalid SPARQL update
