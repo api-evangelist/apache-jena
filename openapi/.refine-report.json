@@ -1,0 +1,20 @@
+{
+  "provider": "apache-jena",
+  "sources": [
+    "apache-jena-dataset-management-api-openapi.yml",
+    "apache-jena-graph-store-protocol-api-openapi.yml",
+    "apache-jena-sparql-query-api-openapi.yml",
+    "apache-jena-sparql-update-api-openapi.yml"
+  ],
+  "outputs": [
+    "apache-jena-dataset-management-api-openapi.yml",
+    "apache-jena-graph-store-protocol-api-openapi.yml",
+    "apache-jena-sparql-query-api-openapi.yml",
+    "apache-jena-sparql-update-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
