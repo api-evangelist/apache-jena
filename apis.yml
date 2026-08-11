@@ -60,14 +60,6 @@ apis:
     url: openapi/apache-jena-dataset-management-api-openapi.yml
   - type: Documentation
     url: https://jena.apache.org/documentation/fuseki2/
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-dataset-management.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-graph-store-protocol.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-query.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-update.yaml
 - aid: apache-jena:apache-jena-graph-store-protocol-api
   name: Apache Jena Graph Store Protocol API
   description: SPARQL Graph Store HTTP Protocol operations
@@ -79,14 +71,6 @@ apis:
     url: openapi/apache-jena-graph-store-protocol-api-openapi.yml
   - type: Documentation
     url: https://jena.apache.org/documentation/fuseki2/
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-dataset-management.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-graph-store-protocol.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-query.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-update.yaml
 - aid: apache-jena:apache-jena-sparql-query-api
   name: Apache Jena SPARQL Query API
   description: SPARQL 1.1 Query operations
@@ -98,14 +82,6 @@ apis:
     url: openapi/apache-jena-sparql-query-api-openapi.yml
   - type: Documentation
     url: https://jena.apache.org/documentation/fuseki2/
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-dataset-management.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-graph-store-protocol.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-query.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-update.yaml
 - aid: apache-jena:apache-jena-sparql-update-api
   name: Apache Jena SPARQL Update API
   description: SPARQL 1.1 Update operations
@@ -117,15 +93,18 @@ apis:
     url: openapi/apache-jena-sparql-update-api-openapi.yml
   - type: Documentation
     url: https://jena.apache.org/documentation/fuseki2/
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-dataset-management.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-graph-store-protocol.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-query.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/fuseki-sparql-sparql-update.yaml
 common:
+- type: IssueTracker
+  url: https://github.com/apache/jena/issues
+- type: SecurityPolicy
+  url: https://github.com/apache/jena/blob/main/SECURITY.md
+- type: CodeOfConduct
+  url: https://github.com/apache/.github/blob/main/.github/CODE_OF_CONDUCT.md
+- type: ContributionGuide
+  url: https://github.com/apache/jena/blob/main/CONTRIBUTING.md
+- type: License
+  name: Apache-2.0
+  url: https://github.com/apache/jena/blob/main/LICENSE
 - type: AgenticAccess
   url: agentic-access/apache-jena-agentic-access.yml
 - type: VulnerabilityDisclosure
