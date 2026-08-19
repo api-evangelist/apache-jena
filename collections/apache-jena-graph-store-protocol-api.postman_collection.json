@@ -1,0 +1,508 @@
+{
+  "item": [
+    {
+      "id": "7e32e80c-7080-4546-a924-e8b0871e8f34",
+      "name": "Graph Store Protocol",
+      "description": {
+        "content": "SPARQL Graph Store HTTP Protocol operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e39da60-04f5-440b-bf64-92bab67e6373",
+          "name": "Apache jena Apache Jena Fuseki Get Graph",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Get Graph",
+            "description": {
+              "content": "Retrieve an RDF graph from the dataset using the Graph Store Protocol.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":dataset",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "graph",
+                  "value": "<string>",
+                  "description": "Named graph URI (omit for default graph)"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "text/turtle"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1ddd1122-1062-4018-afcc-0806dfa1b81e",
+              "name": "RDF graph content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "graph",
+                      "value": "http://example.org/graph"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/turtle"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/ld+json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0951403-f2a8-4bfb-8da1-fd20d8cc82b4",
+              "name": "Graph not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "graph",
+                      "value": "http://example.org/graph"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f234d625-8503-4c6c-b123-97776f267ec7",
+          "name": "Apache jena Apache Jena Fuseki Replace Graph",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Replace Graph",
+            "description": {
+              "content": "Replace an RDF graph in the dataset.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":dataset",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "graph",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/turtle"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "d9c63244-6fef-4613-a105-6abb63cb1b83",
+              "name": "Graph replaced",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "graph",
+                      "value": "http://example.org/graph"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f86d42fb-228a-4f31-ab72-f0bad844d263",
+              "name": "Graph created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "graph",
+                      "value": "http://example.org/graph"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0a581c6-02df-40bd-b53d-08bcd74bd325",
+          "name": "Apache jena Apache Jena Fuseki Add to Graph",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Add to Graph",
+            "description": {
+              "content": "Add RDF triples to an existing graph.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":dataset",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "graph",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "text/turtle"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "8745dbad-9542-4eb8-903a-fd2d527783e7",
+              "name": "Triples added",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "graph",
+                      "value": "example-value"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ed43409-dd22-4518-bedf-00d2edf6dae6",
+          "name": "Apache jena Apache Jena Fuseki Delete Graph",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Delete Graph",
+            "description": {
+              "content": "Delete a named graph from the dataset.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":dataset",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "graph",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe5b6d84-b035-4e40-9ef5-e6d8a22b418d",
+              "name": "Graph deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "graph",
+                      "value": "http://example.org/graph"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3030",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6560dfe9-0f82-45e9-9910-7f709accaf59",
+    "name": "Apache Jena Fuseki SPARQL Dataset Management Graph Store Protocol API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.\n\nContact Support:\n Email: users@jena.apache.org",
+      "type": "text/plain"
+    }
+  }
+}

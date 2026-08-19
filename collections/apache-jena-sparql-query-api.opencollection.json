@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Jena Fuseki SPARQL Dataset Management SPARQL Query API",
+    "version": "5.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SPARQL Query",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki SPARQL Query via GET",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3030/:dataset/sparql",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path",
+                "description": "Dataset name"
+              },
+              {
+                "name": "query",
+                "value": "SELECT * WHERE { ?s ?p ?o } LIMIT 10",
+                "type": "query",
+                "description": "SPARQL query string"
+              },
+              {
+                "name": "default-graph-uri",
+                "value": "https://example.com",
+                "type": "query",
+                "description": "Default graph URI"
+              },
+              {
+                "name": "named-graph-uri",
+                "value": "example-name",
+                "type": "query",
+                "description": "Named graph URI"
+              }
+            ]
+          },
+          "docs": "Execute a SPARQL SELECT, CONSTRUCT, ASK, or DESCRIBE query using HTTP GET."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki SPARQL Query via POST",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3030/:dataset/sparql",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Execute a SPARQL query using HTTP POST for longer queries."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

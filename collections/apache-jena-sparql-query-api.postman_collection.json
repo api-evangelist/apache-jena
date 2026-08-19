@@ -1,0 +1,302 @@
+{
+  "item": [
+    {
+      "id": "e14de3b8-2a78-4b6a-9528-f85e096789ae",
+      "name": "SPARQL Query",
+      "description": {
+        "content": "SPARQL 1.1 Query operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fb3a8dfb-b8f9-4f67-8cdb-8b8283790acf",
+          "name": "Apache jena Apache Jena Fuseki SPARQL Query via GET",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki SPARQL Query via GET",
+            "description": {
+              "content": "Execute a SPARQL SELECT, CONSTRUCT, ASK, or DESCRIBE query using HTTP GET.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":dataset",
+                "sparql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) SPARQL query string"
+                },
+                {
+                  "disabled": false,
+                  "key": "default-graph-uri",
+                  "value": "<string>",
+                  "description": "Default graph URI"
+                },
+                {
+                  "disabled": false,
+                  "key": "named-graph-uri",
+                  "value": "<string>",
+                  "description": "Named graph URI"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) Dataset name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/sparql-results+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1754be99-1f80-4fc7-8869-612ee8e81103",
+              "name": "SPARQL query results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "sparql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "SELECT * WHERE { ?s ?p ?o } LIMIT 10"
+                    },
+                    {
+                      "key": "default-graph-uri",
+                      "value": "https://example.com"
+                    },
+                    {
+                      "key": "named-graph-uri",
+                      "value": "example-name"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) Dataset name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/sparql-results+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/sparql-results+json"
+                }
+              ],
+              "body": "{\n  \"head\": {\n    \"vars\": [\n      \"s\",\n      \"p\",\n      \"o\"\n    ]\n  },\n  \"results\": {\n    \"bindings\": [\n      {\n        \"s\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"p\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"o\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        }\n      },\n      {\n        \"s\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"p\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"o\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        }\n      }\n    ]\n  },\n  \"boolean\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d634c3ee-dee1-4f5f-9cd5-160f37727604",
+              "name": "Invalid SPARQL query",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "sparql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "SELECT * WHERE { ?s ?p ?o } LIMIT 10"
+                    },
+                    {
+                      "key": "default-graph-uri",
+                      "value": "https://example.com"
+                    },
+                    {
+                      "key": "named-graph-uri",
+                      "value": "example-name"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) Dataset name"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a3088a1-de8b-46bb-9a88-289ca845fe12",
+          "name": "Apache jena Apache Jena Fuseki SPARQL Query via POST",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki SPARQL Query via POST",
+            "description": {
+              "content": "Execute a SPARQL query using HTTP POST for longer queries.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ":dataset",
+                "sparql"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/sparql-query"
+              },
+              {
+                "key": "Accept",
+                "value": "application/sparql-results+json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<string>"
+            }
+          },
+          "response": [
+            {
+              "id": "a763561b-c956-412d-8bec-0ab22829223c",
+              "name": "SPARQL query results",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ":dataset",
+                    "sparql"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/sparql-results+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "SELECT * WHERE { ?s ?p ?o } LIMIT 10"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/sparql-results+json"
+                }
+              ],
+              "body": "{\n  \"head\": {\n    \"vars\": [\n      \"s\",\n      \"p\",\n      \"o\"\n    ]\n  },\n  \"results\": {\n    \"bindings\": [\n      {\n        \"s\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"p\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"o\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        }\n      },\n      {\n        \"s\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"p\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        },\n        \"o\": {\n          \"type\": \"uri\",\n          \"value\": \"http://example.org/subject\",\n          \"datatype\": \"string\",\n          \"xml:lang\": \"string\"\n        }\n      }\n    ]\n  },\n  \"boolean\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3030",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "387e9667-46cd-42d0-99c4-cdee157e31d4",
+    "name": "Apache Jena Fuseki SPARQL Dataset Management SPARQL Query API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.\n\nContact Support:\n Email: users@jena.apache.org",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Jena Fuseki SPARQL Dataset Management API",
+    "version": "5.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Dataset Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki List Datasets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3030/$/datasets"
+          },
+          "docs": "List all datasets on the Fuseki server."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Create Dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3030/$/datasets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new RDF dataset on the Fuseki server."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Get Dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3030/$/datasets/:dataset",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get information about a specific dataset."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Delete Dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3030/$/datasets/:dataset",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a dataset from the Fuseki server."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Jena Fuseki SPARQL Dataset Management Graph Store Protocol API",
+    "version": "5.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Graph Store Protocol",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Get Graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://localhost:3030/:dataset/data",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              },
+              {
+                "name": "graph",
+                "value": "http://example.org/graph",
+                "type": "query",
+                "description": "Named graph URI (omit for default graph)"
+              }
+            ]
+          },
+          "docs": "Retrieve an RDF graph from the dataset using the Graph Store Protocol."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Add to Graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3030/:dataset/data",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              },
+              {
+                "name": "graph",
+                "value": "example-value",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Add RDF triples to an existing graph."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Replace Graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://localhost:3030/:dataset/data",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              },
+              {
+                "name": "graph",
+                "value": "http://example.org/graph",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Replace an RDF graph in the dataset."
+        },
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki Delete Graph",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "http://localhost:3030/:dataset/data",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              },
+              {
+                "name": "graph",
+                "value": "http://example.org/graph",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Delete a named graph from the dataset."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

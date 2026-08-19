@@ -1,0 +1,355 @@
+{
+  "item": [
+    {
+      "id": "a59a8997-3371-4434-aefb-dd62feec8a93",
+      "name": "Dataset Management",
+      "description": {
+        "content": "Dataset administration",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "547910e7-e703-4c2b-9532-eaf832f9c7d8",
+          "name": "Apache jena Apache Jena Fuseki List Datasets",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki List Datasets",
+            "description": {
+              "content": "List all datasets on the Fuseki server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "$",
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "faecb6e7-2a1c-410d-9374-9c108296dcf9",
+              "name": "List of datasets",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "$",
+                    "datasets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"datasets\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45565f97-02bb-4aa3-96eb-ccd1e82a28f4",
+          "name": "Apache jena Apache Jena Fuseki Create Dataset",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Create Dataset",
+            "description": {
+              "content": "Create a new RDF dataset on the Fuseki server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "$",
+                "datasets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dbName\": \"<string>\",\n  \"dbType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "62c05069-c724-4b4c-80c0-43c80e00829f",
+              "name": "Dataset created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "$",
+                    "datasets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dbName\": \"ds\",\n  \"dbType\": \"tdb2\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7e9977c-01b7-41b6-a5b7-8e54f3dec0fe",
+          "name": "Apache jena Apache Jena Fuseki Get Dataset",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Get Dataset",
+            "description": {
+              "content": "Get information about a specific dataset.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "$",
+                "datasets",
+                ":dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b810a6c5-ba7e-4971-bde5-766b4595d2fd",
+              "name": "Dataset information",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "$",
+                    "datasets",
+                    ":dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"ds.name\": \"/ds\",\n  \"ds.state\": true,\n  \"ds.services\": []\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "beed1b86-bcb8-4346-acfc-5c46cb436025",
+          "name": "Apache jena Apache Jena Fuseki Delete Dataset",
+          "request": {
+            "name": "Apache jena Apache Jena Fuseki Delete Dataset",
+            "description": {
+              "content": "Delete a dataset from the Fuseki server.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "$",
+                "datasets",
+                ":dataset"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dataset",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd7cac56-70ff-4c2d-95e6-fe756d2fc07e",
+              "name": "Dataset deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "$",
+                    "datasets",
+                    ":dataset"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dataset",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://localhost:3030",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "87b50d22-5834-483f-b277-66162dc4f84c",
+    "name": "Apache Jena Fuseki SPARQL Dataset Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.\n\nContact Support:\n Email: users@jena.apache.org",
+      "type": "text/plain"
+    }
+  }
+}

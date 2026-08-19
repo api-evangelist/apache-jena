@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Apache Jena Fuseki SPARQL Dataset Management SPARQL Update API",
+    "version": "5.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SPARQL Update",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Apache jena Apache Jena Fuseki SPARQL Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://localhost:3030/:dataset/update",
+            "params": [
+              {
+                "name": "dataset",
+                "value": "ds",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Execute a SPARQL 1.1 Update operation to modify RDF data."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
