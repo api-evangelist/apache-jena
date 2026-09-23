@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: Apache Jena Fuseki SPARQL Dataset Management API
   description: REST API for Apache Jena Fuseki SPARQL server providing SPARQL Query, SPARQL Update, and Graph Store Protocol (GSP) operations for managing RDF datasets.
@@ -116,6 +116,25 @@ paths:
           description: Dataset deleted
 components:
   schemas:
+    DatasetRequest:
+      type: object
+      description: Request to create a dataset
+      required:
+      - dbName
+      - dbType
+      properties:
+        dbName:
+          type: string
+          description: Dataset name
+          example: ds
+        dbType:
+          type: string
+          description: Dataset type
+          enum:
+          - tdb
+          - tdb2
+          - mem
+          example: tdb2
     Dataset:
       type: object
       description: A Fuseki dataset
@@ -141,22 +160,3 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Dataset'
-    DatasetRequest:
-      type: object
-      description: Request to create a dataset
-      required:
-      - dbName
-      - dbType
-      properties:
-        dbName:
-          type: string
-          description: Dataset name
-          example: ds
-        dbType:
-          type: string
-          description: Dataset type
-          enum:
-          - tdb
-          - tdb2
-          - mem
-          example: tdb2
