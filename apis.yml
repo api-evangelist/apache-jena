@@ -38,7 +38,7 @@ tags:
 - Linked Data
 - OWL
 - Ontology
-- Open-Source
+- Open Source
 - RDF
 - Semantic Web
 - SPARQL
@@ -51,6 +51,7 @@ tags_raw:
 - RDF
 - Semantic Web
 - SPARQL
+- Open-Source
 created: '2026-03-16'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/apis.yml

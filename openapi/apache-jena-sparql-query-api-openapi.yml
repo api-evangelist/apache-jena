@@ -99,16 +99,6 @@ paths:
                 $ref: '#/components/schemas/SparqlResults'
 components:
   schemas:
-    Binding:
-      type: object
-      description: A single result binding
-      properties:
-        s:
-          $ref: '#/components/schemas/RDFTerm'
-        p:
-          $ref: '#/components/schemas/RDFTerm'
-        o:
-          $ref: '#/components/schemas/RDFTerm'
     RDFTerm:
       type: object
       description: An RDF term (URI, literal, or blank node)
@@ -156,3 +146,13 @@ components:
         boolean:
           type: boolean
           description: Result for ASK queries
+    Binding:
+      type: object
+      description: A single result binding
+      properties:
+        s:
+          $ref: '#/components/schemas/RDFTerm'
+        p:
+          $ref: '#/components/schemas/RDFTerm'
+        o:
+          $ref: '#/components/schemas/RDFTerm'
