@@ -99,26 +99,6 @@ paths:
                 $ref: '#/components/schemas/SparqlResults'
 components:
   schemas:
-    RDFTerm:
-      type: object
-      description: An RDF term (URI, literal, or blank node)
-      properties:
-        type:
-          type: string
-          enum:
-          - uri
-          - literal
-          - bnode
-          example: uri
-        value:
-          type: string
-          example: http://example.org/subject
-        datatype:
-          type: string
-          description: Datatype URI for typed literals
-        xml:lang:
-          type: string
-          description: Language tag for language-tagged literals
     SparqlResults:
       type: object
       description: SPARQL query results in JSON format
@@ -156,3 +136,23 @@ components:
           $ref: '#/components/schemas/RDFTerm'
         o:
           $ref: '#/components/schemas/RDFTerm'
+    RDFTerm:
+      type: object
+      description: An RDF term (URI, literal, or blank node)
+      properties:
+        type:
+          type: string
+          enum:
+          - uri
+          - literal
+          - bnode
+          example: uri
+        value:
+          type: string
+          example: http://example.org/subject
+        datatype:
+          type: string
+          description: Datatype URI for typed literals
+        xml:lang:
+          type: string
+          description: Language tag for language-tagged literals

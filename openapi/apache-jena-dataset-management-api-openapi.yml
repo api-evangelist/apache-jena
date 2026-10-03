@@ -116,25 +116,6 @@ paths:
           description: Dataset deleted
 components:
   schemas:
-    DatasetRequest:
-      type: object
-      description: Request to create a dataset
-      required:
-      - dbName
-      - dbType
-      properties:
-        dbName:
-          type: string
-          description: Dataset name
-          example: ds
-        dbType:
-          type: string
-          description: Dataset type
-          enum:
-          - tdb
-          - tdb2
-          - mem
-          example: tdb2
     Dataset:
       type: object
       description: A Fuseki dataset
@@ -160,3 +141,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Dataset'
+    DatasetRequest:
+      type: object
+      description: Request to create a dataset
+      required:
+      - dbName
+      - dbType
+      properties:
+        dbName:
+          type: string
+          description: Dataset name
+          example: ds
+        dbType:
+          type: string
+          description: Dataset type
+          enum:
+          - tdb
+          - tdb2
+          - mem
+          example: tdb2
