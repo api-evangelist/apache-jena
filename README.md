@@ -1,4 +1,4 @@
-# Apache Jena (apache-jena)
+# Apache Jena
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,138 +66,175 @@
 
 Apache Jena is a Java framework for building Semantic Web and Linked Data applications. It provides APIs for RDF, SPARQL, OWL, and a triplestore database (TDB2) along with the Fuseki SPARQL server with a REST API for querying and managing RDF datasets.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/apache-jena/refs/heads/main/apis.yml)
+**Areas:** Java · Linked Data · OWL · Ontology · Open Source · RDF · Semantic Web · SPARQL
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache Jena on APIs.io
 
-## Tags:
+Everything profiled for Apache Jena is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-jena/](https://apis.io/providers/apache-jena/)** — or go straight to one of the APIs or properties below.
 
- - Java, Linked Data, OWL, Ontology, Open Source, RDF, Semantic Web, SPARQL
+### APIs (5)
 
-## Timestamps
+- [Apache Jena Java API](https://apis.io/apis/apache-jena/java-api/) — The Jena Java API provides programmatic access to RDF model creation, SPARQL query execution, OWL reasoning, and TDB2 triplestore management for building…
+- [Apache Jena Dataset Management API](https://apis.io/apis/apache-jena/apache-jena-dataset-management-api/) — Dataset administration
+- [Apache Jena Graph Store Protocol API](https://apis.io/apis/apache-jena/apache-jena-graph-store-protocol-api/) — SPARQL Graph Store HTTP Protocol operations
+- [Apache Jena SPARQL Query API](https://apis.io/apis/apache-jena/apache-jena-sparql-query-api/) — SPARQL 1.1 Query operations
+- [Apache Jena SPARQL Update API](https://apis.io/apis/apache-jena/apache-jena-sparql-update-api/) — SPARQL 1.1 Update operations
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache Jena Fuseki SPARQL API
-Jena Fuseki provides a SPARQL server with REST API endpoints for SPARQL 1.1 Query, SPARQL 1.1 Update, and the SPARQL Graph Store HTTP Protocol.
+#### Agentic access (1)
 
-**Human URL:** [https://jena.apache.org/documentation/fuseki2/](https://jena.apache.org/documentation/fuseki2/)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags:
+- [Apache Jena Agentic Access](https://apis.io/agentic-access/apache-jena/apache-jena-agentic-access/)
 
- - Fuseki, RDF, REST, SPARQL
+#### JSON Schema (6)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://jena.apache.org/documentation/fuseki2/)
-- [OpenAPI](openapi/apache-jena-fuseki-sparql-api.yaml)
+- [Binding](https://apis.io/schemas/apache-jena/fuseki-sparql-api-binding/)
+- [Dataset](https://apis.io/schemas/apache-jena/fuseki-sparql-api-dataset/)
+- [DatasetList](https://apis.io/schemas/apache-jena/fuseki-sparql-api-dataset-list/)
+- [DatasetRequest](https://apis.io/schemas/apache-jena/fuseki-sparql-api-dataset-request/)
+- [RDFTerm](https://apis.io/schemas/apache-jena/fuseki-sparql-api-rdf-term/)
+- [SparqlResults](https://apis.io/schemas/apache-jena/fuseki-sparql-api-sparql-results/)
 
-### Apache Jena Java API
-The Jena Java API provides programmatic access to RDF model creation, SPARQL query execution, OWL reasoning, and TDB2 triplestore management.
+#### JSON Structure (6)
 
-**Human URL:** [https://jena.apache.org/documentation/](https://jena.apache.org/documentation/)
+Data models expressed in JSON Structure.
 
-#### Tags:
+- [Fuseki Sparql Api Binding Structure](https://apis.io/json-structure/apache-jena/fuseki-sparql-api-binding-structure/)
+- [Fuseki Sparql Api Dataset List Structure](https://apis.io/json-structure/apache-jena/fuseki-sparql-api-dataset-list-structure/)
+- [Fuseki Sparql Api Dataset Request Structure](https://apis.io/json-structure/apache-jena/fuseki-sparql-api-dataset-request-structure/)
+- [Fuseki Sparql Api Dataset Structure](https://apis.io/json-structure/apache-jena/fuseki-sparql-api-dataset-structure/)
+- [Fuseki Sparql Api Rdf Term Structure](https://apis.io/json-structure/apache-jena/fuseki-sparql-api-rdf-term-structure/)
+- [Fuseki Sparql Api Sparql Results Structure](https://apis.io/json-structure/apache-jena/fuseki-sparql-api-sparql-results-structure/)
 
- - Java, OWL, RDF, SDK
+#### JSON-LD (1)
 
-#### Properties
+Linked-data contexts for the provider's vocabulary.
 
+- [Apache Jena Fuseki Sparql Api Context](https://apis.io/jsonld/apache-jena/apache-jena-fuseki-sparql-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Apache Jena Vocabulary](https://apis.io/vocabularies/apache-jena/apache-jena-vocabulary/)
+
+#### Examples (6)
+
+Example requests and responses.
+
+- [Fuseki Sparql Api Binding Example](https://apis.io/examples/apache-jena/fuseki-sparql-api-binding-example/)
+- [Fuseki Sparql Api Dataset Example](https://apis.io/examples/apache-jena/fuseki-sparql-api-dataset-example/)
+- [Fuseki Sparql Api Dataset List Example](https://apis.io/examples/apache-jena/fuseki-sparql-api-dataset-list-example/)
+- [Fuseki Sparql Api Dataset Request Example](https://apis.io/examples/apache-jena/fuseki-sparql-api-dataset-request-example/)
+- [Fuseki Sparql Api Rdf Term Example](https://apis.io/examples/apache-jena/fuseki-sparql-api-rdf-term-example/)
+- [Fuseki Sparql Api Sparql Results Example](https://apis.io/examples/apache-jena/fuseki-sparql-api-sparql-results-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Apache Jena Fuseki SPARQL Dataset Management API](https://apis.io/collections/apache-jena/open-apache-jena-dataset-management-api/)
+- [Apache Jena Fuseki SPARQL Dataset Management Graph Store Protocol API](https://apis.io/collections/apache-jena/open-apache-jena-graph-store-protocol-api/)
+- [Apache Jena Fuseki SPARQL Dataset Management SPARQL Query API](https://apis.io/collections/apache-jena/open-apache-jena-sparql-query-api/)
+- [Apache Jena Fuseki SPARQL Dataset Management SPARQL Update API](https://apis.io/collections/apache-jena/open-apache-jena-sparql-update-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Apache Jena — jsonschema rules](https://apis.io/rules/apache-jena/apache-jena-jsonschema-spectral-rules/)
+- [Apache Jena API Rules](https://apis.io/rules/apache-jena/apache-jena-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apache Jena Domain Security](https://apis.io/security/apache-jena/apache-jena-domain-security/)
+- [Apache Jena Vulnerability Disclosure](https://apis.io/security/apache-jena/apache-jena-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apache Jena Plans Pricing](https://apis.io/plans/apache-jena/apache-jena-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apache Jena Rate Limits](https://apis.io/rate-limits/apache-jena/apache-jena-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apache Jena Finops](https://apis.io/finops/apache-jena/apache-jena-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://jena.apache.org/documentation/)
-- [GettingStarted](https://jena.apache.org/tutorials/)
+- [Getting started](https://jena.apache.org/tutorials/)
+- [Terms of service](https://www.apache.org/licenses/LICENSE-2.0)
+- [GitHub](https://github.com/apache)
 
-## Common Properties
+## API Evangelist rating
 
-- [GitHubOrganization](https://github.com/apache)
-- [GitHubRepository](https://github.com/apache/jena)
-- [Documentation](https://jena.apache.org/documentation/)
-- [GettingStarted](https://jena.apache.org/tutorials/)
-- [TermsOfService](https://www.apache.org/licenses/LICENSE-2.0)
-- [Versioning](https://jena.apache.org/about_jena/releases.html)
-- [SpectralRules](rules/apache-jena-spectral-rules.yml)
-- [Vocabulary](vocabulary/apache-jena-vocabulary.yaml)
-- [NaftikoCapability](capabilities/sparql-data-management.yaml)
+**Kin Score 38.4** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Features
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 49.7 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 18.4 |
 
-| Name | Description |
-|------|-------------|
-| SPARQL Query and Update | Full SPARQL 1.1 query and update protocol support via Fuseki REST API. |
-| RDF Model API | Java API for creating, reading, and manipulating RDF graphs. |
-| OWL Reasoning | OWL and RDFS inference via Jena's rule-based and OWL reasoners. |
-| TDB2 Triplestore | Native high-performance RDF triplestore for persistent graph storage. |
-| Graph Store Protocol | SPARQL Graph Store HTTP Protocol for named graph management. |
-| Multiple RDF Formats | Support for Turtle, JSON-LD, N-Triples, RDF/XML, and TriG serialization. |
-| Ontology API | High-level API for working with OWL and RDFS ontologies. |
+**Agent readiness 20.4** — agent-aware
 
-## Use Cases
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Knowledge Graph Management | Build and query knowledge graphs using RDF and SPARQL. |
-| Linked Data Publishing | Publish Linked Data endpoints with Fuseki SPARQL server. |
-| Semantic Search | Enable semantic search over structured RDF datasets. |
-| Data Integration | Integrate heterogeneous data sources using RDF as a common data model. |
+**Regulatory alignment 20.6** — Horizontal (data, software, accessibility, platform)
 
-## Integrations
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-jena/](https://apis.io/providers/apache-jena/).
 
-| Name | Description |
-|------|-------------|
-| Apache Solr | Integrate full-text search with SPARQL queries via Solr text index. |
-| Elasticsearch | Full-text search integration for Fuseki text search capabilities. |
-| Spring Framework | Spring integration for Jena RDF operations in enterprise Java apps. |
+## How this profile is made
 
-## Artifacts
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-Machine-readable API specifications organized by format.
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Jena: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### OpenAPI
+## Open an issue
 
-- [Apache Jena Fuseki SPARQL API](openapi/apache-jena-fuseki-sparql-api.yaml)
-
-### JSON Schema
-
-6 schema files extracted from the Fuseki SPARQL API OpenAPI specification.
-
-### JSON Structure
-
-6 JSON Structure files converted from JSON Schema files.
-
-### JSON-LD
-
-- [Apache Jena Fuseki SPARQL API Context](json-ld/apache-jena-fuseki-sparql-api-context.jsonld)
-
-### Examples
-
-6 example JSON files generated from JSON Schema definitions.
-
-## Capabilities
-
-Naftiko capabilities organized as shared per-API definitions composed into customer-facing workflows.
-
-### Shared Per-API Definitions
-
-- [Apache Jena Fuseki SPARQL API](capabilities/shared/fuseki-sparql-api.yaml) — 4 operations for SPARQL queries and dataset management
-
-### Workflow Capabilities
-
-| Workflow | APIs Combined | Tools | Persona |
-|----------|--------------|-------|---------|
-| [Apache Jena SPARQL Data Management](capabilities/sparql-data-management.yaml) | Apache Jena Fuseki SPARQL API | 5 | Data Engineer, Knowledge Graph Architect |
-
-## Vocabulary
-
-- [Apache Jena Vocabulary](vocabulary/apache-jena-vocabulary.yaml) — Unified taxonomy mapping 4 resources, 7 actions, 1 workflow, and 2 personas
-
-## Rules
-
-- [Apache Jena Spectral Rules](rules/apache-jena-spectral-rules.yml) — 15 rules across 8 categories enforcing Apache Jena Fuseki API conventions
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-jena/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
